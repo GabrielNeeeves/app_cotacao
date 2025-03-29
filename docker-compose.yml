@@ -1,0 +1,16 @@
+services:
+  mysql:
+    image: mysql
+    container_name: app_cotacao
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: app-cotacao
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    ports:
+      - "3306:3306"
+    volumes:
+      - app-cotacao-data:/var/lib/mysql
+
+volumes:
+  app-cotacao-data:
