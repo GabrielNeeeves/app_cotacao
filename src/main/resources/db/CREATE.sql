@@ -18,7 +18,7 @@ CREATE TABLE Empresa (
 CREATE TABLE Escola (
     id_escola INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
-    endereco TEXT NOT NULL
+    endereco VARCHAR(100) NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE Cliente (
@@ -55,7 +55,7 @@ CREATE TABLE Material_Empresa (
     modelo VARCHAR(255),
     preco DECIMAL(10,2),
     desconto DECIMAL(5,2),
-    observacoes TEXT,
+    observacoes VARCHAR(100),
     PRIMARY KEY (id_empresa, id_material),
     CONSTRAINT fk_material_empresa_empresa FOREIGN KEY (id_empresa) REFERENCES Empresa(id_empresa),
     CONSTRAINT fk_material_empresa_material FOREIGN KEY (id_material) REFERENCES Material(id_material)
@@ -66,8 +66,8 @@ CREATE TABLE ListaPadrao (
     ano INT NOT NULL,
     serie VARCHAR(50) NOT NULL,
     professor VARCHAR(255),
-    observacoes TEXT,
-    descricao TEXT,
+    observacoes VARCHAR(100),
+    descricao VARCHAR(100),
     id_escola INT NOT NULL,
     CONSTRAINT fk_listapadrao_escola FOREIGN KEY (id_escola) REFERENCES Escola(id_escola)
 ) ENGINE=InnoDB;
@@ -102,3 +102,4 @@ CREATE TABLE MateriaisEscolhidos (
     CONSTRAINT fk_materiais_escolhidos_cliente FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
     CONSTRAINT fk_materiais_escolhidos_material FOREIGN KEY (id_material) REFERENCES Material(id_material)
 ) ENGINE=InnoDB;
+
