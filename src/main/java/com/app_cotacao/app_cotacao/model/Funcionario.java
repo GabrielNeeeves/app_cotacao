@@ -9,7 +9,7 @@ public class Funcionario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Assuming id_funcionario is auto-generated
     @Column(name = "id_funcionario")
-    private Integer idFuncionario;
+    private Long idFuncionario;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario", nullable = false)
@@ -31,7 +31,7 @@ public class Funcionario {
         this.escola = escola;
     }
 
-    public Integer getIdFuncionario() {
+    public Long getIdFuncionario() {
         return idFuncionario;
     }
 

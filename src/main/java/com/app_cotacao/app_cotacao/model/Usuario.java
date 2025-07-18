@@ -1,6 +1,7 @@
 package com.app_cotacao.app_cotacao.model;
 
 
+import com.app_cotacao.app_cotacao.model.DTO.UsuarioDto;
 import com.app_cotacao.app_cotacao.model.roles.Roles;
 import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,13 @@ public class Usuario {
         this.nome = nome;
         this.senha = senha;
         this.email = email;
+    }
+
+    public Usuario (UsuarioDto dto) {
+        nome = dto.nome();
+        email = dto.email();
+        senha = dto.senha();
+        role = dto.role();
     }
 
     public Long getId_usuario() {

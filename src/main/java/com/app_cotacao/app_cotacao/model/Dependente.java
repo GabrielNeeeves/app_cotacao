@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Dependente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Assuming id_dependente is auto-generated
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_dependente")
     private Long id_dependente;
 
