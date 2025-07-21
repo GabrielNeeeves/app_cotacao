@@ -11,6 +11,4 @@ public interface ListaPadraoRepository extends JpaRepository<ListaPadrao, Long> 
     List<ListaPadrao> findByAno(Long ano);
     List<ListaPadrao> findBySerie(String serie);
     List<ListaPadrao> findByEscola(Escola escola);
-    List<ListaPadrao> findByEscolaIdEscola(Long idEscola);
-
 }

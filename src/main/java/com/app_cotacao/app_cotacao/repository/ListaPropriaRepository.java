@@ -7,6 +7,5 @@ import java.util.List;
 
 public interface ListaPropriaRepository extends JpaRepository<ListaPropria, Long> {
 
-    List<ListaPropria> findByClienteId(Long id_cliente);
 
 }

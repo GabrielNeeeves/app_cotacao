@@ -7,16 +7,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@RestController
+@RequestMapping("/clientes")
 public class ClienteController {
 
     @Autowired
     private ClienteService clienteService;
 
     // POST /clientes?usuarioId=1
-    @PostMapping
-    public ResponseEntity<Cliente> createCliente(@RequestParam Long usuarioId) {
+    @PostMapping("/post")
+    public ResponseEntity<Cliente> createCliente(@RequestBody Long usuarioId) {
         Cliente novo = clienteService.createCliente(usuarioId);
         return ResponseEntity.ok(novo);
+    }
+
+    @GetMapping
+    public List<Cliente> getAll() {
+        return clienteService.getAllCLiente();
     }
 
     // GET /clientes/{id}
@@ -31,7 +40,7 @@ public class ClienteController {
     }
 
     // PUT /clientes/{id}?novoUsuarioId=2
-    @PutMapping("/{id}")
+    @PutMapping("/put/{id}")
     public ResponseEntity<Cliente> updateCliente(@PathVariable Long id, @RequestParam Long novoUsuarioId) {
         try {
             Cliente atualizado = clienteService.updateCliente(id, novoUsuarioId);
@@ -42,7 +51,7 @@ public class ClienteController {
     }
 
     // DELETE /clientes/{id}
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Cliente> deleteCliente(@PathVariable Long id) {
         try {
             Cliente deletado = clienteService.deleteCliente(id);

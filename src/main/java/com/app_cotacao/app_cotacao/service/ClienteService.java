@@ -8,6 +8,8 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ClienteService {
 
@@ -24,6 +26,10 @@ public class ClienteService {
 
         Cliente cliente = new Cliente(usuario);
         return clienteRepository.save(cliente);
+    }
+
+    public List<Cliente> getAllCLiente() {
+        return clienteRepository.findAll();
     }
 
     // Buscar cliente por id_cliente (mesmo id do usuario)

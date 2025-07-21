@@ -32,13 +32,13 @@ public class UsuarioController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/post")
     public ResponseEntity<Usuario> createUsuario(@RequestBody UsuarioDto dto) {
         Usuario criado = usuarioService.createUsuario(dto);
         return ResponseEntity.ok(criado);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/put/{id}")
     public ResponseEntity<Usuario> updateUsuario(@PathVariable Long id, @RequestBody UsuarioDto dto) {
         try {
             Usuario atualizado = usuarioService.updateUsuario(id, dto);
@@ -48,7 +48,7 @@ public class UsuarioController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Usuario> deleteUsuario(@PathVariable Long id) {
         try {
             Usuario deletado = usuarioService.deleteUsuario(id);

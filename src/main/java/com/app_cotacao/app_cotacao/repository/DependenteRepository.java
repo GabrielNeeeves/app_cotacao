@@ -10,6 +10,6 @@ public interface DependenteRepository extends JpaRepository<Dependente, Long> {
 
     //encontrar dependentes por cliente:
     List<Dependente> findByCliente(Cliente cliente);
-    List<Dependente> findByClienteIdCliente(Long idCliente); // Para buscar pelo ID do cliente
+    //List<Dependente> findByClienteId_cliente(Long id_cliente);
 
 }

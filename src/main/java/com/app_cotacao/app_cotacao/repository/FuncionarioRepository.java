@@ -9,8 +9,6 @@ import java.util.List;
 
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> {
 
-    // Or to find employees by the user's ID:
-    List<Funcionario> findByUsuarioIdUsuario(Long idUsuario);
 
     // To find employees by company:
     List<Funcionario> findByEmpresa(Empresa empresa);

@@ -8,8 +8,4 @@ import java.util.List;
 
 public interface Material_EmpresaRepository extends JpaRepository<Material_Empresa, MaterialEmpresaId> {
 
-    List<Material_Empresa> findByEmpresaId(Long empresa_id);
-
-    List<Material_Empresa> findByMaterialId(Long material__id);
-
 }
